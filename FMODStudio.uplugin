@@ -1,41 +1,33 @@
 {
-	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "FMODStudio",
-	"Description": "No description added yet...",
-	"Category": "Other",
-	"CreatedBy": "",
-	"CreatedByURL": "",
-	"DocsURL": "",
-	"MarketplaceURL": "",
-	"SupportURL": "",
-	"EngineVersion": "4.23.0",
-	"CanContainContent": true,
-	"Installed": true,
-	"Modules": [
+    "FileVersion" : 3,
+	
+	"FriendlyName" : "FMOD Studio Integration",
+	"Version" : 20006,
+	"VersionName" : "2.00.06",
+	"CreatedBy" : "Firelight Technologies",
+	"CreatedByURL" : "http://fmod.com",
+	"Description" : "FMOD Studio Integration.",
+	"Category" : "Audio",
+	"EnabledByDefault" : true,
+	
+	"Modules" :
+	[
+		{
+			"Name": "FMODStudio",
+			"Type": "CookedOnly",
+			"LoadingPhase": "PreLoadingScreen"
+		},
 		{
 			"Name": "FMODStudio",
 			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"WhitelistPlatforms": [
-				"Mac",
-				"Win64",
-				"IOS",
-				"Android"
-			]
-		}
-	],
-	"Plugins" : [
+			"LoadingPhase": "PreDefault"
+		},
 		{
-			"Name": "DDTools",
-			"Enabled": true
+			"Name" : "FMODStudioEditor",
+			"Type" : "Editor"
 		}
 	],
-	"PreBuildSteps" : {
-		"Mac": [
-			"cd $(PluginDir) && export GIT_DESCRIBE=`git describe --always --dirty` && echo \"FMODStudio plugin version ${GIT_DESCRIBE}\"",
-			"cd $(PluginDir) && echo \"#define GIT_DESCRIBE ${GIT_DESCRIBE}\" > Source/FMODStudio/Private/git-describe.h"
-		]
-	}
+
+	"CanContainContent" : true,
+	"Installed" : true
 }
